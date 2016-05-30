@@ -28,7 +28,8 @@ public class NetworkManager : Photon.PunBehaviour {
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.Instantiate("Cube", Vector3.up * 5, Quaternion.identity, 0); //instantiate player "cube"
+        //PhotonNetwork.Instantiate("Cube", Vector3.up * 5, Quaternion.identity, 0); //instantiate player "cube"
+        PhotonNetwork.Instantiate("Player-1", new Vector3(0, 1, 0), Quaternion.identity, 0);
         Debug.Log("Connected to Room");
     }
 }
