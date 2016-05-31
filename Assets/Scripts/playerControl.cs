@@ -14,7 +14,7 @@ public class playerControl : Photon.MonoBehaviour
     private Vector3 syncPos;
     private Vector3 syncStartPos = Vector3.zero;
     private Vector3 syncEndPos = Vector3.zero;
-    void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    /*void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.isWriting)
         {
@@ -35,7 +35,7 @@ public class playerControl : Photon.MonoBehaviour
             syncEndPos = syncPos + syncVelocity * syncDelay; //adds velocity and thereby predect the end position
             syncStartPos = m_Rigidbody.position;
         }
-    }
+    }*/
 
     void Update()
     {
@@ -43,12 +43,12 @@ public class playerControl : Photon.MonoBehaviour
         {
             InputMovement();
         }
-        else
+        /*else
         {
             syncTime += Time.deltaTime;
             transform.position = Vector3.Lerp(syncStartPos, syncEndPos, syncTime / syncDelay); //prediction of position
                                                                                                          //transform.position = Vector3.Lerp(transform.position, syncPosition, Time.deltaTime *5 ); //interpolate of last known position
-        }
+        }*/
     }
 
     void InputMovement()

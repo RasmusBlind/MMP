@@ -34,7 +34,7 @@ public class NetworkManager : Photon.PunBehaviour {
         controller.enabled = true;
        // Camera camera = player.
         //camera.enabled = true;
-
+        
         Debug.Log("Connected to Room Player-1");
 
       //  PhotonNetwork.Instantiate("Player-2", new Vector3(1, 1, 0), Quaternion.identity, 0);
