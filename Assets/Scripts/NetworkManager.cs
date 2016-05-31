@@ -30,6 +30,9 @@ public class NetworkManager : Photon.PunBehaviour {
     {
         //PhotonNetwork.Instantiate("Cube", Vector3.up * 5, Quaternion.identity, 0); //instantiate player "cube"
         PhotonNetwork.Instantiate("Player-1", new Vector3(0, 1, 0), Quaternion.identity, 0);
-        Debug.Log("Connected to Room");
+        Debug.Log("Connected to Room Player-1");
+
+        PhotonNetwork.Instantiate("Player-2", new Vector3(1, 1, 0), Quaternion.identity, 0);
+        Debug.Log("Connected to Room Player-2");
     }
 }
