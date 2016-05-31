@@ -16,18 +16,16 @@ public class SpeechManager : MonoBehaviour
     void Start()
     {
         //Adding "right" keyword to the dictionary
-        keywords.Add("go right", () =>
+        keywords.Add("right", () =>
         {
-            // Setting the action of the "right" command - will make the object move right
-            this.gameObject.GetComponent<Renderer>().material.color = Color.red;
-            Debug.Log("VIRKER DET HER ENDELIG");
+            
+            gameObject.GetComponent<Movementbehavior>().turnR = true;
         });
         //Addid the "left" keyword to the dictionary
-        keywords.Add("go left", () =>
+        keywords.Add("left", () =>
         {
-            // This action makes the object go in the left direction
-            this.gameObject.GetComponent<Renderer>().material.color = Color.green;
-            Debug.Log("Venstre virker ogs");
+            
+            gameObject.GetComponent<Movementbehavior>().turnL = true;
         });
 
         // Tell the KeywordRecognizer about the keywords (what we want to recognize)
