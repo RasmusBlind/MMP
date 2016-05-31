@@ -19,7 +19,6 @@ public class Speedcontroller : MonoBehaviour {
             speed = myrb.velocity.y + accleration;
             myrb.velocity = new Vector3(0, speed , 0);
         }
-        Debug.Log(myrb.velocity.y);
         
 	}
 }
