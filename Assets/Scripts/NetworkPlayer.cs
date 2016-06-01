@@ -6,14 +6,20 @@ public class NetworkPlayer : Photon.MonoBehaviour {
     public Camera myCam;
     private Vector3 correctPlayerPos;
     private Quaternion correctPlayerRot;
+    public GameObject myspeedcont;
 
     // Use this for initialization
     void Start()
     {
+        
         if (photonView.isMine)
         { 
             myCam.enabled = true;
             myCam.GetComponent<AudioListener>().enabled = true;
+            GetComponent<Movementbehavior>().enabled = true;
+            GetComponent<SpeechManager>().enabled = true;
+            
+            
         }
     }
 	
@@ -24,12 +30,17 @@ public class NetworkPlayer : Photon.MonoBehaviour {
            // transform.position=this.correctPlayerPos;
             // transform.rotation=this.correctPlayerRot;
             transform.position = Vector3.Lerp(transform.position, this.correctPlayerPos, Time.deltaTime * 5);
-            Debug.Log(correctPlayerPos + " " + transform.position );
+            //Debug.Log(correctPlayerPos + " " + transform.position );
             
             transform.rotation = Quaternion.Lerp(transform.rotation, this.correctPlayerRot, Time.deltaTime * 5);
         }
-	
-	}
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            GetComponent<PhotonView>().RPC("go",PhotonTargets.All);
+        }
+
+
+    }
      void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     
     {

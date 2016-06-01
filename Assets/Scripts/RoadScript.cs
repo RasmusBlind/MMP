@@ -19,7 +19,7 @@ public class RoadScript : MonoBehaviour {
     {
         
 
-        if (col.gameObject.name == "Cube")
+        if (col.gameObject.name == "Player-2")
         {
             RoadManager.Instance.Spawn();
             StartCoroutine(Remove());

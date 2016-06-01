@@ -3,6 +3,9 @@ using System.Collections;
 
 public class NetworkManager : Photon.PunBehaviour {
 
+    public string myplayer1 = "playerobj-1";
+    public string myplayer2 = "playerobj-2";
+
     // Use this for initialization
     void Start()
     {
@@ -28,16 +31,22 @@ public class NetworkManager : Photon.PunBehaviour {
 
     public override void OnJoinedRoom()
     {
-        //PhotonNetwork.Instantiate("Cube", Vector3.up * 5, Quaternion.identity, 0); //instantiate player "cube"
-        GameObject player = PhotonNetwork.Instantiate("Player-1", new Vector3(0, 1, 0), Quaternion.identity, 0);
-        playerControl controller = player.GetComponent<playerControl>();
-        controller.enabled = true;
-       // Camera camera = player.
-        //camera.enabled = true;
+        if (PhotonNetwork.countOfPlayers > 1) {
+            GameObject player = PhotonNetwork.Instantiate(myplayer2, GameObject.FindGameObjectWithTag("lane4").transform.position, Quaternion.identity, 0);
+            //Speedcontroller controller = player.GetComponent<Speedcontroller>();
+            //controller.enabled = true;
+
+        }
+        else
+        {
+            GameObject player = PhotonNetwork.Instantiate(myplayer1, GameObject.FindGameObjectWithTag("lane4").transform.position, Quaternion.identity, 0);
+            //Speedcontroller controller = player.GetComponent<Speedcontroller>();
+            //controller.enabled = true;
+        }
         
+
         Debug.Log("Connected to Room Player-1");
 
-      //  PhotonNetwork.Instantiate("Player-2", new Vector3(1, 1, 0), Quaternion.identity, 0);
-      //  Debug.Log("Connected to Room Player-2");
+        
     }
 }
