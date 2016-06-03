@@ -27,13 +27,11 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 	void Update () {
         if(!photonView.isMine)
         {
-           // transform.position=this.correctPlayerPos;
-            // transform.rotation=this.correctPlayerRot;
+           //makes the movement of the object smooth
             transform.position = Vector3.Lerp(transform.position, this.correctPlayerPos, Time.deltaTime * 10);
-            //Debug.Log(correctPlayerPos + " " + transform.position );
-            
             transform.rotation = Quaternion.Lerp(transform.rotation, this.correctPlayerRot, Time.deltaTime * 10);
         }
+        // we start a Remote protocall call RPC that will start the speed of the car so they will go down the map 
         if (Input.GetKeyUp(KeyCode.Space))
         {
             GetComponent<PhotonView>().RPC("go",PhotonTargets.All);

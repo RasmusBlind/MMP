@@ -31,17 +31,16 @@ public class NetworkManager : Photon.PunBehaviour {
 
     public override void OnJoinedRoom()
     {
+        // checking how many players have joine and spawn different cars based on that
         if (PhotonNetwork.countOfPlayers > 1) {
             GameObject player = PhotonNetwork.Instantiate(myplayer2, GameObject.FindGameObjectWithTag("lane4").transform.position, Quaternion.identity, 0);
-            //Speedcontroller controller = player.GetComponent<Speedcontroller>();
-            //controller.enabled = true;
+            
 
         }
         else
         {
             GameObject player = PhotonNetwork.Instantiate(myplayer1, GameObject.FindGameObjectWithTag("lane4").transform.position, Quaternion.identity, 0);
-            //Speedcontroller controller = player.GetComponent<Speedcontroller>();
-            //controller.enabled = true;
+            
         }
         
 
