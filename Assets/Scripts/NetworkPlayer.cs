@@ -8,6 +8,8 @@ public class NetworkPlayer : Photon.MonoBehaviour {
     private Quaternion correctPlayerRot;
     public GameObject myspeedcont;
 
+    public bool start = false;
+
     // Use this for initialization
     void Start()
     {
@@ -32,7 +34,7 @@ public class NetworkPlayer : Photon.MonoBehaviour {
             transform.rotation = Quaternion.Lerp(transform.rotation, this.correctPlayerRot, Time.deltaTime * 10);
         }
         // we start a Remote protocall call RPC that will start the speed of the car so they will go down the map 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (start == true)
         {
             GetComponent<PhotonView>().RPC("go",PhotonTargets.All);
         }

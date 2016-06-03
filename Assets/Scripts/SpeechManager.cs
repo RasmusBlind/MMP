@@ -28,6 +28,13 @@ public class SpeechManager : MonoBehaviour
             gameObject.GetComponent<Movementbehavior>().turnL = true;
         });
 
+        keywords.Add("play game", () =>
+        {
+            gameObject.GetComponent<NetworkPlayer>().start = true;
+
+        }
+        );
+
         // Tell the KeywordRecognizer about the keywords (what we want to recognize)
         keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
 

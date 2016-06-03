@@ -96,7 +96,7 @@ public class Movementbehavior : MonoBehaviour {
 		else if (turnspeed < -0.2 && rotatepoint.rotation.x > -0.3f)
         {
            
-            rotatepoint.Rotate(0, 0, 2 * turnspeed);
+            rotatepoint.Rotate(0, 0, 1 * turnspeed);
         }
         
         
