@@ -36,7 +36,9 @@ public class GameManager : MonoBehaviour {
             GUI.color = Color.blue;
             GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2, 134, 20), "   Blue Player Wins!!   ", mySecondStyle);
             GameObject.FindGameObjectWithTag("Player1").GetComponent<Speedcontroller>().enabled = false;
+            GameObject.FindGameObjectWithTag("Player1").GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             GameObject.FindGameObjectWithTag("Player2").GetComponent<Speedcontroller>().enabled = false;
+            GameObject.FindGameObjectWithTag("Player2").GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         }
 
     }
