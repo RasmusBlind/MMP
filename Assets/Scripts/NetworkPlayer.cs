@@ -10,7 +10,7 @@ public class NetworkPlayer : Photon.MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        if (photonView.isMine)
+        if (photonView.isMine)//only if photonView ismine then it will turn on the camera and the audio.
         { 
             myCam.enabled = true;
             myCam.GetComponent<AudioListener>().enabled = true;
@@ -30,7 +30,7 @@ public class NetworkPlayer : Photon.MonoBehaviour {
         }
 	
 	}
-     void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+     void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) 
     
     {
         if(stream.isWriting)
