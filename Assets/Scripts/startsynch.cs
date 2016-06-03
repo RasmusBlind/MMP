@@ -8,7 +8,7 @@ public class startsynch : MonoBehaviour {
 	[PunRPC]
     void go()
     {
-        // we set both cars in motions 
+        // we set both cars in motions by activating th script to move them forward
         GameObject.FindGameObjectWithTag("Player1").GetComponent<Speedcontroller>().enabled = true;
         GameObject.FindGameObjectWithTag("Player2").GetComponent<Speedcontroller>().enabled = true;
 
