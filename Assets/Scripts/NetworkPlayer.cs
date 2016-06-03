@@ -13,6 +13,7 @@ public class NetworkPlayer : Photon.MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        GameObject.FindGameObjectWithTag("Road").GetComponent<RoadManager>().enabled = true;
         
         if (photonView.isMine)
         { 
@@ -36,8 +37,14 @@ public class NetworkPlayer : Photon.MonoBehaviour {
         // we start a Remote protocall call RPC that will start the speed of the car so they will go down the map 
         if (start == true)
         {
-            GetComponent<PhotonView>().RPC("go",PhotonTargets.All);
+            GetComponent<PhotonView>().RPC("go", PhotonTargets.All);
+
         }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GetComponent<PhotonView>().RPC("go", PhotonTargets.All);
+        }
+
 
 
     }

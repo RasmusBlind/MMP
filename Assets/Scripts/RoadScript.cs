@@ -19,9 +19,10 @@ public class RoadScript : MonoBehaviour {
     {
         
 
-        if (col.gameObject.name == "Player-2")
+        if (col.gameObject.name == "Player-2" || col.gameObject.name == "Player-1")
         {
             RoadManager.Instance.Spawn();
+            RoadManager.Instance.spawncoin();
             StartCoroutine(Remove());
 
             Debug.Log("It collides");

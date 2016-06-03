@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Speedcontroller : MonoBehaviour {
     // these variable makes the car go down the road with a maxspeed and accleration that can be set from the unity editor
-    public float maxspeed = 40.0f;
+    public float maxspeed = 20.0f;
     public float accleration = 0.5f;
     private float speed = 1.0f;
 

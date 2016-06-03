@@ -81,19 +81,19 @@ public class Movementbehavior : MonoBehaviour {
        
 		// a state machine that will make the car rotate alittle to left or right when the lane are changed. there are a threshold on how much the car can and will turn
         // when we are not turning turnspeed less than 0.2 we will return the rotationg to 0.0 or almost 
-		if (turnspeed> 0.2 && rotatepoint.rotation.x < 0.3f)
+		if (turnspeed> 0.3 && rotatepoint.rotation.x < 0.3f)
         {
             rotatepoint.Rotate(0, 0, 1 * turnspeed);
         }
-        else if (turnspeed < 0.2 && rotatepoint.rotation.x > 0.01f)
+        else if (turnspeed < 0.3 && rotatepoint.rotation.x > 0.01f)
         {
-            rotatepoint.Rotate(0, 0, -0.9f);
+            rotatepoint.Rotate(0, 0, -1f);
         }
-        else if (turnspeed > -0.2 && rotatepoint.rotation.x < -0.01f)
+        else if (turnspeed > -0.3 && rotatepoint.rotation.x < -0.01f)
         {
-            rotatepoint.Rotate(0, 0, 0.9f);
+            rotatepoint.Rotate(0, 0, 1f);
         }
-		else if (turnspeed < -0.2 && rotatepoint.rotation.x > -0.3f)
+		else if (turnspeed < -0.3 && rotatepoint.rotation.x > -0.3f)
         {
            
             rotatepoint.Rotate(0, 0, 1 * turnspeed);

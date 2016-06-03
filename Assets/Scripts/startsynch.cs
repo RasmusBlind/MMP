@@ -11,7 +11,16 @@ public class startsynch : MonoBehaviour {
         // we set both cars in motions by activating th script to move them forward
         GameObject.FindGameObjectWithTag("Player1").GetComponent<Speedcontroller>().enabled = true;
         GameObject.FindGameObjectWithTag("Player2").GetComponent<Speedcontroller>().enabled = true;
+    }
+    [PunRPC]
+    void addpointplayer1()
+    {
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().addpointplayer1();
+    }
 
-
+    [PunRPC]
+    void addpointplayer2()
+    {
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().addpointplayer2();
     }
 }
