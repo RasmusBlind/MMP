@@ -21,13 +21,14 @@ public class SpeechManager : MonoBehaviour
             
             gameObject.GetComponent<Movementbehavior>().turnR = true;
         });
-        //Addid the "left" keyword to the dictionary
+        //Adding the "left" keyword to the dictionary
         keywords.Add("left", () =>
         {
             
             gameObject.GetComponent<Movementbehavior>().turnL = true;
         });
 
+        // adding keyword "play game" to start the game
         keywords.Add("play game", () =>
         {
             gameObject.GetComponent<NetworkPlayer>().start = true;

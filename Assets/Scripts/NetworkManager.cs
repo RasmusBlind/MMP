@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class NetworkManager : Photon.PunBehaviour {
-
+    // string referencing the playerobjects for use when instantiating
     public string myplayer1 = "playerobj-1";
     public string myplayer2 = "playerobj-2";
 
