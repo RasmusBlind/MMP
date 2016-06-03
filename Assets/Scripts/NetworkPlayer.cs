@@ -29,10 +29,10 @@ public class NetworkPlayer : Photon.MonoBehaviour {
         {
            // transform.position=this.correctPlayerPos;
             // transform.rotation=this.correctPlayerRot;
-            transform.position = Vector3.Lerp(transform.position, this.correctPlayerPos, Time.deltaTime * 5);
+            transform.position = Vector3.Lerp(transform.position, this.correctPlayerPos, Time.deltaTime * 10);
             //Debug.Log(correctPlayerPos + " " + transform.position );
             
-            transform.rotation = Quaternion.Lerp(transform.rotation, this.correctPlayerRot, Time.deltaTime * 5);
+            transform.rotation = Quaternion.Lerp(transform.rotation, this.correctPlayerRot, Time.deltaTime * 10);
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
